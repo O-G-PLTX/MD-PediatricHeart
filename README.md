@@ -17,29 +17,32 @@ Este repositório foi criado para centralizar a documentação, exploração, pr
 
 ## 🧾 Dicionário de Dados
 
-| Atributo             | Tipo        | Escala         | Descrição                                                                 |
-|----------------------|-------------|----------------|---------------------------------------------------------------------------|
-| `ID`                 | Categórico  | Nominal        | Identificador único do paciente (anonimizado)                            |
-| `Peso`               | Numérico    | Razão          | Peso do paciente (kg)                                                    |
-| `Altura`             | Numérico    | Razão          | Altura do paciente (cm)                                                  |
-| `IMC`                | Numérico    | Razão          | Índice de Massa Corporal: peso / (altura em metros)²                     |
-| `Atendimento`        | Temporal    | Data           | Data do atendimento médico                                               |
-| `DN`                 | Temporal    | Data           | Data de nascimento do paciente                                           |
-| `IDADE`              | Numérico    | Intervalar     | Idade em anos decimais, calculada com base nas datas                     |
-| `Convenio`           | Categórico  | Nominal        | Tipo de convênio do paciente (ex: GS, SULA, SAME)                        |
-| `PULSOS`             | Categórico  | Ordinal        | Condição da pulsação (ex: Normais, Diminuídos, etc.)                     |
-| `PA SISTOLICA`       | Numérico    | Intervalar     | Pressão Arterial Sistólica (mmHg)                                        |
-| `PA DIASTOLICA`      | Numérico    | Intervalar     | Pressão Arterial Diastólica (mmHg)                                       |
-| `PPA`                | Numérico / Texto | Razão / Texto | Razão entre PAS e PAD; alguns casos estão como "Não Calculado"        |
-| `NORMAL X ANORMAL`   | Categórico  | Binário        | Indica se o paciente tem (Anormal) ou não tem (Normal) patologia cardíaca |
-| `B2`                 | Categórico  | Nominal        | Tipo do segundo som cardíaco (bulha B2)                                  |
-| `SOPRO`              | Categórico  | Nominal        | Presença ou tipo de sopro cardíaco identificado                          |
-| `FC`                 | Numérico    | Intervalar     | Frequência cardíaca (batimentos por minuto)                              |
-| `HDA 1`              | Categórico  | Nominal        | Queixa principal ou histórico da doença atual                            |
-| `HDA2`               | Categórico  | Nominal        | Queixa secundária (quando presente)                                      |
-| `SEXO`               | Categórico  | Nominal        | Sexo biológico do paciente (`M` ou `F`)                                  |
-| `MOTIVO1`            | Categórico  | Nominal        | Principal motivo de encaminhamento para a cardiologia                    |
-| `MOTIVO2`            | Categórico  | Nominal        | Motivo secundário de encaminhamento (se houver)                          |
+| Atributo             | Tipo         | Escala                | Descrição                                                                 |
+|----------------------|--------------|------------------------|---------------------------------------------------------------------------|
+| `ID`                 | Qualitativo  | Nominal                | Identificador único do paciente (anonimizado)                            |
+| `Peso`               | Quantitativo | Razão                  | Peso do paciente (kg)                                                    |
+| `Altura`             | Quantitativo | Razão                  | Altura do paciente (cm)                                                  |
+| `IMC`                | Quantitativo | Razão                  | Índice de Massa Corporal: peso / (altura em metros)²                     |
+| `Atendimento`        | Quantitativo | Intervalar             | Data do atendimento médico                                               |
+| `DN`                 | Quantitativo | Intervalar             | Data de nascimento do paciente                                           |
+| `IDADE`              | Quantitativo | Razão                  | Idade em anos decimais, calculada com base nas datas                     |
+| `Convenio`           | Qualitativo  | Nominal                | Tipo de convênio do paciente (ex: GS, SULA, SAME)                        |
+| `PULSOS`             | Qualitativo  | Ordinal                | Condição da pulsação (ex: Normais, Diminuídos, etc.)                     |
+| `PA SISTOLICA`       | Quantitativo | Intervalar             | Pressão Arterial Sistólica (mmHg)                                        |
+| `PA DIASTOLICA`      | Quantitativo | Intervalar             | Pressão Arterial Diastólica (mmHg)                                       |
+| `PPA`                | Qualitativo* | Nominal* / Razão       | Razão entre PAS e PAD; alguns registros são texto ("Não Calculado")      |
+| `NORMAL X ANORMAL`   | Qualitativo  | Nominal                | Indica se há (Anormal) ou não há (Normal) patologia cardíaca             |
+| `B2`                 | Qualitativo  | Nominal                | Tipo do segundo som cardíaco (bulha B2)                                  |
+| `SOPRO`              | Qualitativo  | Nominal                | Presença ou tipo de sopro cardíaco identificado                          |
+| `FC`                 | Quantitativo | Intervalar             | Frequência cardíaca (batimentos por minuto)                              |
+| `HDA 1`              | Qualitativo  | Nominal                | Queixa principal ou histórico da doença atual                            |
+| `HDA2`               | Qualitativo  | Nominal                | Queixa secundária (quando presente)                                      |
+| `SEXO`               | Qualitativo  | Nominal                | Sexo biológico do paciente (`M` ou `F`)                                  |
+| `MOTIVO1`            | Qualitativo  | Nominal                | Principal motivo de encaminhamento para a cardiologia                    |
+| `MOTIVO2`            | Qualitativo  | Nominal                | Motivo secundário de encaminhamento (se houver)                          |
+
+> ℹ️ *Nota sobre `PPA`: como contém tanto valores numéricos quanto texto (“Não Calculado”), seu tipo é misto. Pode ser tratado como **Qualitativo Nominal** nos registros não numéricos e **Quantitativo Razão** quando houver valor válido.
+
 
 ---
 
